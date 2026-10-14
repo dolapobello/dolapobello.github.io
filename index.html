@@ -81,7 +81,7 @@ nav ul a:hover::after{right:0}
 .figure .dash{stroke-dasharray:5 6}
 .figure text{font-family:var(--sans);font-weight:700;font-size:18px;fill:var(--blue)}
 .figure text.g{fill:var(--green)}
-.figure .lab{font-size:13px;font-weight:600;fill:var(--muted)}
+.figure .lab{font-size:15px;font-weight:600;fill:var(--muted)}
 .figure .lab.gold{fill:var(--gold)}
 .figure .lead{stroke:var(--gold);stroke-width:1.4;fill:none;stroke-dasharray:3 4}
 .figure figcaption{font-size:.84rem;color:var(--muted);border-top:1px solid var(--line);padding-top:12px;margin-top:4px}
@@ -394,34 +394,41 @@ nav ul a.active{color:var(--green)} nav ul a.active::after{right:0}
     </div>
 
     <figure class="figure" style="margin:0">
-      <svg viewBox="150 100 340 340" role="img" aria-labelledby="molT">
-        <title id="molT">A quinolone antibiotic core carrying a bicyclo[1.1.1]pentane cage on its ring nitrogen</title>
-        <path class="b cage draw part cagegrp" pathLength="1" d="M330 250 L296 214 L330 178"/>
-        <path class="b cage draw part cagegrp" pathLength="1" d="M330 250 L366 222 L330 178"/>
-        <path class="b cage dash fadein part cagegrp" d="M330 250 L344 208 L330 178"/>
-        <path class="b draw" pathLength="1" d="M330 178 L330 146"/>
-        <text class="g fadein" x="322" y="138">R</text>
-        <path class="b draw" pathLength="1" d="M330 290 L330 250"/>
-        <path class="b draw core" pathLength="1" d="M330 290 L364.6 310 L364.6 350 L330 370 L295.4 350 L295.4 310 Z"/>
-        <path class="b draw core" pathLength="1" d="M357 318 L357 342"/>
-        <path class="b draw core" pathLength="1" d="M326 370 L326 402 M334 370 L334 402"/>
-        <text class="fadein" x="323" y="424">O</text>
-        <path class="b draw core" pathLength="1" d="M364.6 350 L399 370"/>
-        <text class="fadein" x="403" y="378">CO₂H</text>
-        <path class="b draw core" pathLength="1" d="M295.4 310 L260.8 290 L226.2 310 L226.2 350 L260.8 370 L295.4 350"/>
-        <path class="b draw core" pathLength="1" d="M233.5 314 L233.5 346 M263 299 L287 313 M263 361 L287 347"/>
-        <circle cx="330" cy="290" r="12" fill="#fff" class="fadein"/>
-        <text class="fadein" x="323" y="297">N</text>
-        <!-- annotations -->
-        <path class="lead fadein" d="M372 214 L420 190"/>
-        <text class="lab gold fadein" x="384" y="176">BCP cage</text>
-        <text class="lab fadein" x="384" y="160">3D bioisostere</text>
-        <path class="lead fadein" d="M222 330 L182 300"/>
-        <text class="lab gold fadein" x="160" y="284">Quinolone core</text>
-        <text class="lab fadein" x="160" y="268">antibiotic scaffold</text>
+      <svg viewBox="0 0 420 360" role="img" aria-labelledby="illT">
+        <title id="illT">Illustration of synthetic chemistry: a reaction flask producing ring molecules, with a spectrum below for characterisation</title>
+        <defs>
+          <linearGradient id="liq" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1B8A63" stop-opacity=".22"/><stop offset="1" stop-color="#1C4E9C" stop-opacity=".28"/></linearGradient>
+          <clipPath id="bulb"><circle cx="150" cy="200" r="78"/></clipPath>
+        </defs>
+        <!-- liquid -->
+        <rect class="fadein" x="60" y="196" width="180" height="90" fill="url(#liq)" clip-path="url(#bulb)"/>
+        <path class="b fadein" d="M74 205 Q112 192 150 205 T226 205" stroke-width="2" style="stroke:var(--green)" clip-path="url(#bulb)"/>
+        <circle class="fadein" cx="128" cy="240" r="5" fill="none" stroke="#1B8A63" stroke-width="2"/>
+        <circle class="fadein" cx="166" cy="226" r="3.5" fill="none" stroke="#1B8A63" stroke-width="2"/>
+        <circle class="fadein" cx="150" cy="256" r="4" fill="none" stroke="#1B8A63" stroke-width="2"/>
+        <!-- flask -->
+        <path class="b draw" pathLength="1" d="M132 52 L132 128 A78 78 0 1 0 168 128 L168 52"/>
+        <path class="b draw" pathLength="1" d="M124 52 L176 52"/>
+        <!-- rising molecules -->
+        <path class="b cage draw" pathLength="1" d="M228 70 l20 -11.5 l20 11.5 l0 23 l-20 11.5 l-20 -11.5 Z"/>
+        <path class="b cage draw" pathLength="1" d="M234 74 l14 -8 M262 74 l0 15 M234 89 l14 8"/>
+        <path class="b draw" pathLength="1" d="M268 70 l18 -10"/>
+        <path class="b draw" pathLength="1" d="M248 104.5 l0 18"/>
+        <path class="b draw" pathLength="1" d="M300 118 l17 -10 l17 10 l0 20 l-17 10 l-17 -10 Z"/>
+        <path class="b draw" pathLength="1" d="M334 118 l16 -9"/>
+        <path class="lead fadein" d="M182 62 C200 50 212 66 226 76"/>
+        <path class="lead fadein" d="M262 112 C276 124 288 128 298 128"/>
+        <circle class="fadein" cx="208" cy="34" r="6" fill="none" stroke="#C49A2C" stroke-width="2"/>
+        <circle class="fadein" cx="196" cy="18" r="3.5" fill="none" stroke="#C49A2C" stroke-width="2"/>
+        <!-- spectrum -->
+        <path class="b draw" pathLength="1" style="stroke-width:2.4" d="M40 330 L120 330 L126 318 L130 330 L196 330 L202 290 L206 330 L246 330 L250 312 L253 330 L256 300 L260 330 L330 330 L334 322 L338 330 L384 330"/>
+        <path class="fadein" d="M40 338 L384 338" stroke="#C49A2C" stroke-width="1.4"/>
+        <!-- labels -->
+        <text class="lab gold fadein" x="246" y="40">Design</text>
+        <text class="lab gold fadein" x="20" y="120">Synthesis</text>
+        <text class="lab gold fadein" x="290" y="290">Characterisation</text>
       </svg>
-      <div class="mtoggle" role="group" aria-label="Highlight part of the molecule"><button class="on" data-m="">Whole molecule</button><button data-m="cage">BCP cage</button><button data-m="core">Quinolone core</button></div>
-      <figcaption>The idea in one drawing: a quinolone core (blue) with a bicyclo[1.1.1]pentane cage (green) on the ring nitrogen, the kind of three dimensional analogue Dolapo builds in the lab.</figcaption>
+      <figcaption>Design, make and measure: Dolapo designs new molecules for medicine, builds them step by step in the flask, and confirms every structure by NMR and mass spectrometry.</figcaption>
     </figure>
   </div>
 </div>
@@ -444,7 +451,7 @@ nav ul a.active{color:var(--green)} nav ul a.active::after{right:0}
     <div class="steps">
       <div class="step"><div class="n">1</div><h3>The problem</h3><p>Quinolones are among the most widely used antibiotic classes, but resistance to them keeps rising. Antimicrobial resistance is one of the biggest threats in modern medicine, and new chemical starting points are needed.</p></div>
       <div class="step"><div class="n">2</div><h3>The idea</h3><p>Many drugs are built from flat aromatic rings. Bicyclo[1.1.1]pentane (BCP) is a compact, rigid cage that can stand in for those flat pieces as a bioisostere, adding three dimensional shape that can change how a molecule behaves in the body.</p></div>
-      <div class="step"><div class="n">3</div><h3>The chemistry</h3><p>Strained cages are hard to attach. Dolapo develops multistep routes to N-BCP quinolin-4(1H)-ones through masked quinolinium intermediates, and extends them to fluorinated and 3-aryl substituted analogues for structure activity studies.</p></div>
+      <div class="step"><div class="n">3</div><h3>The chemistry</h3><p>Strained cages are hard to attach to drug scaffolds. Dolapo develops and optimises multistep synthetic routes to make these analogues, then studies how changes to their structure affect their properties.</p></div>
     </div>
     <div class="quote"><div class="mark" aria-hidden="true">“</div><p>Designing smarter antibiotics for the future.<small>The talk that won Loughborough's School of Science Three Minute Thesis and People's Choice awards in 2026.</small></p></div>
   </div>
@@ -699,11 +706,6 @@ addEventListener('scroll',()=>{const h=document.documentElement;const p=h.scroll
 document.querySelectorAll('.filters button').forEach(b=>b.addEventListener('click',()=>{
   document.querySelectorAll('.filters button').forEach(x=>x.classList.toggle('on',x===b));
   document.querySelectorAll('.cert').forEach(c=>c.classList.toggle('hide',b.dataset.f!=='all'&&c.dataset.cat!==b.dataset.f))}));
-// molecule highlight
-const fig=document.querySelector('.figure');
-document.querySelectorAll('.mtoggle button').forEach(b=>b.addEventListener('click',()=>{
-  document.querySelectorAll('.mtoggle button').forEach(x=>x.classList.toggle('on',x===b));
-  fig.classList.remove('focus-cage','focus-core');if(b.dataset.m)fig.classList.add('focus-'+b.dataset.m)}));
 </script>
 </body>
 </html>
