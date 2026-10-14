@@ -287,6 +287,51 @@ section{padding:80px 0 24px}
 .cbox p{font-size:.92rem}
 .cline{font-size:.84rem}
 footer{font-size:.78rem}
+
+/* ===== Interactive layer ===== */
+.figure::before,.cbox::before{pointer-events:none}
+.sheet .opts .copy{text-transform:none;letter-spacing:.04em;font-size:.82rem}
+.progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:50;background:linear-gradient(90deg,var(--green),var(--blue),var(--gold))}
+nav ul a.active{color:var(--green)} nav ul a.active::after{right:0}
+#role{display:inline-block;min-height:1.2em;border-right:1.5px solid var(--gold);padding-right:4px;animation:caret 1s step-end infinite}
+@keyframes caret{50%{border-color:transparent}}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+.step,.el,.pub,.award,.card,.panel{transition:transform .25s ease,box-shadow .25s ease,border-color .25s}
+.step:hover,.el:hover,.pub:hover,.award:hover,.card:hover,.panel:hover{transform:translateY(-4px);box-shadow:0 18px 36px -20px rgba(28,78,156,.35);border-color:var(--gold-2)}
+.el .tile{transition:transform .35s ease}
+.el:hover .tile{transform:rotate(-6deg) scale(1.06)}
+.figure .part{cursor:pointer;transition:opacity .25s}
+.figure.focus-cage .core,.figure.focus-core .cagegrp{opacity:.25}
+.mtoggle{display:flex;gap:6px;justify-content:center;margin:2px 0 10px}
+.mtoggle button{font:600 .7rem var(--sans);letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:4px;border:1px solid var(--line);background:#fff;color:var(--blue);cursor:pointer}
+.mtoggle button.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+.copy{font:600 .7rem var(--sans);letter-spacing:.05em;text-transform:uppercase;padding:4px 10px;border-radius:4px;border:1px solid var(--gold);background:var(--gold-soft);color:#7A5C00;cursor:pointer;margin-left:6px}
+.copy:hover{background:var(--gold);color:#fff}
+.copy.cite{margin:10px 0 0}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+.filters button{font:600 .74rem var(--sans);letter-spacing:.05em;padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--blue);cursor:pointer;transition:all .2s}
+.filters button.on,.filters button:hover{background:var(--green);border-color:var(--green);color:#fff}
+.cert.hide{display:none}
+.modal{position:fixed;inset:0;z-index:80;background:rgba(20,33,46,.45);display:grid;place-items:center;padding:20px;animation:fade .2s}
+.modal[hidden]{display:none}
+.sheet{position:relative;background:#fff;border-radius:14px;padding:28px 28px 24px;width:min(380px,100%);box-shadow:0 30px 70px rgba(0,0,0,.25);border-top:3px solid var(--gold);animation:pop .25s ease}
+@keyframes pop{from{transform:scale(.95);opacity:0}}
+.sheet h3{color:var(--blue);font-size:1.4rem;margin-bottom:2px}
+.sheet .addr{color:var(--green);font-weight:600;font-size:.9rem;margin-bottom:16px}
+.sheet .opts{display:grid;gap:8px}
+.sheet .opts a,.sheet .opts .copy{display:block;text-align:center;padding:11px;border-radius:6px;font:600 .82rem var(--sans);letter-spacing:.04em;text-decoration:none;margin:0}
+.sheet .opts a{border:1px solid var(--line);color:var(--blue)}
+.sheet .opts a:first-child{background:var(--green);color:#fff;border-color:var(--green)}
+.sheet .opts a:hover{border-color:var(--gold)}
+.sheet .x{position:absolute;top:10px;right:12px;border:none;background:none;font-size:1.5rem;color:var(--muted);cursor:pointer;line-height:1}
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);opacity:0;z-index:90;background:var(--ink);color:#fff;padding:10px 18px;border-radius:999px;font-size:.84rem;font-weight:600;transition:all .3s;pointer-events:none;border:1px solid var(--gold)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.fab{position:fixed;right:22px;bottom:22px;z-index:40;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;text-decoration:none;color:#fff;font-weight:700;
+  background:linear-gradient(135deg,var(--green),var(--blue));box-shadow:0 0 0 2px #fff,0 0 0 3.5px var(--gold),0 10px 20px rgba(0,0,0,.15);opacity:0;transform:translateY(10px);transition:all .3s;pointer-events:none}
+.fab.show{opacity:1;transform:none;pointer-events:auto}
+.hl{transition:background .25s}.hl:hover{background:var(--gold-soft)}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}#role{animation:none;border:none}.step:hover,.el:hover,.pub:hover,.award:hover,.card:hover,.panel:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -310,14 +355,14 @@ footer{font-size:.78rem}
 <div class="hero">
   <div class="wrap">
     <div>
-      <div class="kicker">Synthetic organic and medicinal chemist</div>
+      <div class="kicker"><span id="role">Synthetic organic and medicinal chemist</span></div>
       <h1>Dolapo <span>Bello</span></h1>
       <div class="post"><abbr title="Associate Member of the Royal Society of Chemistry">AMRSC</abbr> Associate Member of the Royal Society of Chemistry</div>
       <p class="intro">I design and make <strong>three dimensional versions of quinolone antibiotics</strong>. By swapping part of the drug for a small, strained carbon cage called bicyclo[1.1.1]pentane, my work looks for new molecules that could stay effective as bacteria grow resistant to the medicines we rely on.</p>
       <p class="intro">Fully funded PhD researcher at <strong>Loughborough University</strong>, published in <em>The Journal of Organic Chemistry</em>, and an award winning communicator of science.</p>
       <div class="actions">
-        <a class="btn solid" href="mailto:dolapobello2013@gmail.com">Email Dolapo</a>
-        <a class="btn line" href="Dolapo_Bello_CV.pdf" download>Download CV</a>
+        <a class="btn solid js-email" href="mailto:dolapobello2013@gmail.com">Email Dolapo</a>
+        <a class="btn line" href="Dolapo_Bello_CV.pdf" target="_blank" rel="noopener">View CV</a>
         <a class="btn line" href="https://www.linkedin.com/in/dolapo-bello" target="_blank" rel="noopener">LinkedIn</a>
       </div>
       <ul class="chips">
@@ -330,20 +375,20 @@ footer{font-size:.78rem}
     <figure class="figure" style="margin:0">
       <svg viewBox="150 100 340 340" role="img" aria-labelledby="molT">
         <title id="molT">A quinolone antibiotic core carrying a bicyclo[1.1.1]pentane cage on its ring nitrogen</title>
-        <path class="b cage draw" pathLength="1" d="M330 250 L296 214 L330 178"/>
-        <path class="b cage draw" pathLength="1" d="M330 250 L366 222 L330 178"/>
-        <path class="b cage dash fadein" d="M330 250 L344 208 L330 178"/>
+        <path class="b cage draw part cagegrp" pathLength="1" d="M330 250 L296 214 L330 178"/>
+        <path class="b cage draw part cagegrp" pathLength="1" d="M330 250 L366 222 L330 178"/>
+        <path class="b cage dash fadein part cagegrp" d="M330 250 L344 208 L330 178"/>
         <path class="b draw" pathLength="1" d="M330 178 L330 146"/>
         <text class="g fadein" x="322" y="138">R</text>
         <path class="b draw" pathLength="1" d="M330 290 L330 250"/>
-        <path class="b draw" pathLength="1" d="M330 290 L364.6 310 L364.6 350 L330 370 L295.4 350 L295.4 310 Z"/>
-        <path class="b draw" pathLength="1" d="M357 318 L357 342"/>
-        <path class="b draw" pathLength="1" d="M326 370 L326 402 M334 370 L334 402"/>
+        <path class="b draw core" pathLength="1" d="M330 290 L364.6 310 L364.6 350 L330 370 L295.4 350 L295.4 310 Z"/>
+        <path class="b draw core" pathLength="1" d="M357 318 L357 342"/>
+        <path class="b draw core" pathLength="1" d="M326 370 L326 402 M334 370 L334 402"/>
         <text class="fadein" x="323" y="424">O</text>
-        <path class="b draw" pathLength="1" d="M364.6 350 L399 370"/>
+        <path class="b draw core" pathLength="1" d="M364.6 350 L399 370"/>
         <text class="fadein" x="403" y="378">CO₂H</text>
-        <path class="b draw" pathLength="1" d="M295.4 310 L260.8 290 L226.2 310 L226.2 350 L260.8 370 L295.4 350"/>
-        <path class="b draw" pathLength="1" d="M233.5 314 L233.5 346 M263 299 L287 313 M263 361 L287 347"/>
+        <path class="b draw core" pathLength="1" d="M295.4 310 L260.8 290 L226.2 310 L226.2 350 L260.8 370 L295.4 350"/>
+        <path class="b draw core" pathLength="1" d="M233.5 314 L233.5 346 M263 299 L287 313 M263 361 L287 347"/>
         <circle cx="330" cy="290" r="12" fill="#fff" class="fadein"/>
         <text class="fadein" x="323" y="297">N</text>
         <!-- annotations -->
@@ -354,6 +399,7 @@ footer{font-size:.78rem}
         <text class="lab gold fadein" x="160" y="284">Quinolone core</text>
         <text class="lab fadein" x="160" y="268">antibiotic scaffold</text>
       </svg>
+      <div class="mtoggle" role="group" aria-label="Highlight part of the molecule"><button class="on" data-m="">Whole molecule</button><button data-m="cage">BCP cage</button><button data-m="core">Quinolone core</button></div>
       <figcaption>The idea in one drawing: a quinolone core (blue) with a bicyclo[1.1.1]pentane cage (green) on the ring nitrogen, the kind of three dimensional analogue Dolapo builds in the lab.</figcaption>
     </figure>
   </div>
@@ -419,6 +465,7 @@ footer{font-size:.78rem}
           <h3>Nucleophilic Substitution of 1,3-Diiodobicyclo[1.1.1]pentane: Synthesis of Bicyclo[1.1.1]pentylpyridinium, Quinolinium, Isoquinolinium, and Pyrazolium Salts</h3>
           <p class="au">H. J. C. Monroe, <b>D. J. Bello</b>, B. J. Duff, M. R. J. Elsegood, K. Watanabe, G. J. Pritchard, M. C. Kimber</p>
           <p class="src"><i>The Journal of Organic Chemistry</i> 2025, 90 (23), 7712–7722. <a href="https://doi.org/10.1021/acs.joc.5c00565" target="_blank" rel="noopener">doi:10.1021/acs.joc.5c00565</a></p>
+          <button class="copy cite" type="button" data-copy="Monroe, H. J. C.; Bello, D. J.; Duff, B. J.; Elsegood, M. R. J.; Watanabe, K.; Pritchard, G. J.; Kimber, M. C. Nucleophilic Substitution of 1,3-Diiodobicyclo[1.1.1]pentane: Synthesis of Bicyclo[1.1.1]pentylpyridinium, Quinolinium, Isoquinolinium, and Pyrazolium Salts. J. Org. Chem. 2025, 90 (23), 7712–7722. https://doi.org/10.1021/acs.joc.5c00565">Copy citation</button>
         </div>
       </article>
       <article class="pub">
@@ -427,6 +474,7 @@ footer{font-size:.78rem}
           <h3>Synthesis of oxidised starch (<i>Dioscorea dumetorum</i>) nanoparticles for the adsorption of lead(II) and cadmium(II) ions from wastewater</h3>
           <p class="au">K. N. Awokoya, V. O. Oninla, <b>D. J. Bello</b></p>
           <p class="src"><i>Environmental Nanotechnology, Monitoring &amp; Management</i> 2021, 14, 100440. <a href="https://doi.org/10.1016/j.enmm.2021.100440" target="_blank" rel="noopener">doi:10.1016/j.enmm.2021.100440</a></p>
+          <button class="copy cite" type="button" data-copy="Awokoya, K. N.; Oninla, V. O.; Bello, D. J. Synthesis of oxidised starch (Dioscorea dumetorum) nanoparticles for the adsorption of lead(II) and cadmium(II) ions from wastewater. Environ. Nanotechnol. Monit. Manag. 2021, 14, 100440. https://doi.org/10.1016/j.enmm.2021.100440">Copy citation</button>
           <p class="note">Starch isolated from bitter yam was modified into nanoparticles and tested as a low cost scavenger for toxic heavy metals in water.</p>
         </div>
       </article>
@@ -456,14 +504,15 @@ footer{font-size:.78rem}
 
     <h3 class="subhead">Certificates</h3>
     <p class="subnote">Full details of each certificate held.</p>
+    <div class="filters" role="group" aria-label="Filter certificates"><button class="on" data-f="all">All</button><button data-f="award">Prizes</button><button data-f="member">Membership</button><button data-f="event">Conferences</button></div>
     <div class="certs">
-      <div class="cert"><div class="d">2026</div><div><h4>Winner, School of Science Three Minute Thesis (3MT®) Competition</h4><p class="by">Loughborough University, School of Science</p><p>Signed by Professor Oli Buckley, Director of Doctoral Programmes</p></div></div>
-      <div class="cert"><div class="d">2026</div><div><h4>People's Choice, School of Science Three Minute Thesis (3MT®) Competition</h4><p class="by">Loughborough University, School of Science</p><p>Signed by Professor Oli Buckley, Director of Doctoral Programmes</p></div></div>
-      <div class="cert"><div class="d">29 May 2026</div><div><h4>RSC Advances 5MT Runner Up</h4><p class="by">Royal Society of Chemistry, RSC Advances</p><p>Awarded at the Women in Chemistry Conference 2026, University of Bristol. Signed by Dr Laura Fisher (Executive Editor), Professor Russell Cox and Professor Karen Faulds (Co-Editors-in-Chief)</p></div></div>
-      <div class="cert"><div class="d">29 May 2026</div><div><h4>Five Minute Thesis (5MT) Runner Up Prize</h4><p class="by">WiChem Bristol 2026 and University of Bristol</p><p>Celebrating Women in Chemistry Conference 2026. Judged on behalf of the organising committee by Prof. M. Carmen Galan, Dr Beatrice Collins and Dr Mélanie Roffet-Salque</p></div></div>
-      <div class="cert"><div class="d">30 June 2026</div><div><h4>Associate Member (AMRSC)</h4><p class="by">The Royal Society of Chemistry</p><p>Admitted as an Associate Member and entitled to use the designatory letters AMRSC</p></div></div>
-      <div class="cert"><div class="d">29 May 2026</div><div><h4>Certificate of Participation</h4><p class="by">University of Bristol and WiChem Bristol 2026</p><p>For attending and presenting a 5MT at the Celebrating Women in Chemistry Conference</p></div></div>
-      <div class="cert"><div class="d">18 May 2026</div><div><h4>Certificate of Attendance</h4><p class="by">RSC Heterocyclic and Synthesis Group, organised by Networks Meetings</p><p>Heterocyclic &amp; Synthesis Group 3rd Postdoctoral Symposium (virtual)</p></div></div>
+      <div class="cert" data-cat="award"><div class="d">2026</div><div><h4>Winner, School of Science Three Minute Thesis (3MT®) Competition</h4><p class="by">Loughborough University, School of Science</p><p>Signed by Professor Oli Buckley, Director of Doctoral Programmes</p></div></div>
+      <div class="cert" data-cat="award"><div class="d">2026</div><div><h4>People's Choice, School of Science Three Minute Thesis (3MT®) Competition</h4><p class="by">Loughborough University, School of Science</p><p>Signed by Professor Oli Buckley, Director of Doctoral Programmes</p></div></div>
+      <div class="cert" data-cat="award"><div class="d">29 May 2026</div><div><h4>RSC Advances 5MT Runner Up</h4><p class="by">Royal Society of Chemistry, RSC Advances</p><p>Awarded at the Women in Chemistry Conference 2026, University of Bristol. Signed by Dr Laura Fisher (Executive Editor), Professor Russell Cox and Professor Karen Faulds (Co-Editors-in-Chief)</p></div></div>
+      <div class="cert" data-cat="award"><div class="d">29 May 2026</div><div><h4>Five Minute Thesis (5MT) Runner Up Prize</h4><p class="by">WiChem Bristol 2026 and University of Bristol</p><p>Celebrating Women in Chemistry Conference 2026. Judged on behalf of the organising committee by Prof. M. Carmen Galan, Dr Beatrice Collins and Dr Mélanie Roffet-Salque</p></div></div>
+      <div class="cert" data-cat="member"><div class="d">30 June 2026</div><div><h4>Associate Member (AMRSC)</h4><p class="by">The Royal Society of Chemistry</p><p>Admitted as an Associate Member and entitled to use the designatory letters AMRSC</p></div></div>
+      <div class="cert" data-cat="event"><div class="d">29 May 2026</div><div><h4>Certificate of Participation</h4><p class="by">University of Bristol and WiChem Bristol 2026</p><p>For attending and presenting a 5MT at the Celebrating Women in Chemistry Conference</p></div></div>
+      <div class="cert" data-cat="event"><div class="d">18 May 2026</div><div><h4>Certificate of Attendance</h4><p class="by">RSC Heterocyclic and Synthesis Group, organised by Networks Meetings</p><p>Heterocyclic &amp; Synthesis Group 3rd Postdoctoral Symposium (virtual)</p></div></div>
     </div>
   </div>
 </section>
@@ -558,16 +607,33 @@ footer{font-size:.78rem}
       <h2>Let's talk <em>chemistry</em></h2>
       <p>I would love to hear from teams in pharmaceutical, agrochemical and chemical industry R&amp;D, and from research groups working on drug discovery and new synthetic methods.</p>
       <div class="actions">
-        <a class="btn solid" href="mailto:dolapobello2013@gmail.com">Email Dolapo</a>
+        <a class="btn solid js-email" href="mailto:dolapobello2013@gmail.com">Email Dolapo</a>
         <a class="btn line" href="https://www.linkedin.com/in/dolapo-bello" target="_blank" rel="noopener">Connect on LinkedIn</a>
-        <a class="btn line" href="Dolapo_Bello_CV.pdf" download>Download CV</a>
+        <a class="btn line" href="Dolapo_Bello_CV.pdf" target="_blank" rel="noopener">View CV</a>
       </div>
-      <div class="cline"><a href="mailto:dolapobello2013@gmail.com">dolapobello2013@gmail.com</a></div>
+      <div class="cline"><a class="js-email" href="mailto:dolapobello2013@gmail.com">dolapobello2013@gmail.com</a> <button class="copy" data-copy="dolapobello2013@gmail.com" type="button">Copy</button></div>
     </div>
   </div>
 </section>
 </main>
 
+
+<div class="progress" aria-hidden="true"></div>
+<a href="#top" class="fab" aria-label="Back to top">↑</a>
+<div class="modal" id="mailModal" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="mailT">
+    <button class="x" type="button" aria-label="Close">×</button>
+    <h3 id="mailT">Email Dolapo</h3>
+    <p class="addr">dolapobello2013@gmail.com</p>
+    <div class="opts">
+      <a target="_blank" rel="noopener" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=dolapobello2013@gmail.com&amp;su=Hello%20Dolapo">Open in Gmail</a>
+      <a target="_blank" rel="noopener" href="https://outlook.live.com/mail/0/deeplink/compose?to=dolapobello2013@gmail.com&amp;subject=Hello%20Dolapo">Open in Outlook</a>
+      <a href="mailto:dolapobello2013@gmail.com?subject=Hello%20Dolapo">Use my email app</a>
+      <button type="button" class="copy" data-copy="dolapobello2013@gmail.com">Copy address</button>
+    </div>
+  </div>
+</div>
+<div class="toast" role="status" aria-live="polite"></div>
 <footer>
   <div class="wrap">
     <span>© 2026 Dolapo Jolade Bello AMRSC · Loughborough, UK</span>
@@ -579,6 +645,43 @@ footer{font-size:.78rem}
 const btn=document.querySelector('.menu-btn'),menu=document.getElementById('menu');
 btn.addEventListener('click',()=>{const o=menu.classList.toggle('open');btn.setAttribute('aria-expanded',o)});
 menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');btn.setAttribute('aria-expanded',false)}));
+
+// ---- interactive layer ----
+const toast=document.querySelector('.toast');let tt;
+function say(m){toast.textContent=m;toast.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>toast.classList.remove('show'),2200)}
+async function copyText(t){try{await navigator.clipboard.writeText(t);return true}catch(e){const a=document.createElement('textarea');a.value=t;a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();let ok=false;try{ok=document.execCommand('copy')}catch(_){}a.remove();return ok}}
+document.addEventListener('click',async e=>{const b=e.target.closest('.copy');if(!b)return;const ok=await copyText(b.dataset.copy);
+  say(ok?(b.classList.contains('cite')?'Citation copied':'Email address copied'):'Press Ctrl+C to copy: '+b.dataset.copy)});
+// email chooser
+const modal=document.getElementById('mailModal');
+document.querySelectorAll('.js-email').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();modal.hidden=false;modal.querySelector('.opts a').focus()}));
+modal.addEventListener('click',e=>{if(e.target===modal||e.target.closest('.x'))modal.hidden=true});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')modal.hidden=true});
+// rotating role
+const roles=['Synthetic organic and medicinal chemist','Antibiotic drug discovery researcher','Award winning science communicator','PhD researcher, Loughborough University'];
+const roleEl=document.getElementById('role');const still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!still){let r=0,i=roles[0].length,del=true;
+  (function tick(){const w=roles[r];if(del){i--;if(i<=0){del=false;r=(r+1)%roles.length}}else{i++;}
+   roleEl.textContent=roles[r].slice(0,Math.max(i,0));let d=del?28:55;
+   if(!del&&i>=roles[r].length){del=true;d=2600}setTimeout(tick,d)})();}
+// reveal on scroll
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll('.head,.step,.quote,.el,.pub,.award,.cert,.stop,.panel,.cbox,.hl').forEach((el,k)=>{el.classList.add('reveal');el.style.transitionDelay=(k%4)*70+'ms';io.observe(el)});
+// progress bar, active nav, back to top
+const bar=document.querySelector('.progress'),fab=document.querySelector('.fab');
+const links=[...document.querySelectorAll('nav ul a')];const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+addEventListener('scroll',()=>{const h=document.documentElement;const p=h.scrollTop/(h.scrollHeight-h.clientHeight);bar.style.width=(p*100)+'%';
+  fab.classList.toggle('show',h.scrollTop>600);
+  let cur=-1;secs.forEach((s,k)=>{if(s&&s.getBoundingClientRect().top<140)cur=k});links.forEach((a,k)=>a.classList.toggle('active',k===cur))},{passive:true});
+// certificate filters
+document.querySelectorAll('.filters button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.filters button').forEach(x=>x.classList.toggle('on',x===b));
+  document.querySelectorAll('.cert').forEach(c=>c.classList.toggle('hide',b.dataset.f!=='all'&&c.dataset.cat!==b.dataset.f))}));
+// molecule highlight
+const fig=document.querySelector('.figure');
+document.querySelectorAll('.mtoggle button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.mtoggle button').forEach(x=>x.classList.toggle('on',x===b));
+  fig.classList.remove('focus-cage','focus-core');if(b.dataset.m)fig.classList.add('focus-'+b.dataset.m)}));
 </script>
 </body>
 </html>
