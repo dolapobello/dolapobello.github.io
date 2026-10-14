@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dolapo Bello | Organic Chemist</title>
+<meta name="description" content="Dolapo Bello AMRSC, synthetic organic and medicinal chemist. PhD researcher at Loughborough University designing bicyclo[1.1.1]pentane analogues of quinolone antibiotics.">
+<meta property="og:title" content="Dolapo Bello | Synthetic Organic and Medicinal Chemist">
+<meta property="og:description" content="PhD researcher at Loughborough University designing three dimensional analogues of quinolone antibiotics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#14212E; --body:#3A4A58; --muted:#6A7886; --line:#E6EAEE; --white:#FFFFFF;
+  --green:#0F6E4E; --green-2:#1B8A63; --green-soft:#EAF5F0;
+  --blue:#1C4E9C; --blue-2:#2F6FD0; --blue-soft:#EDF3FC;
+  --gold:#C49A2C; --gold-2:#E3C467; --gold-soft:#FBF6E6;
+  --serif:"Cormorant Garamond",Georgia,serif; --sans:"Manrope",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--body);font:400 17px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:var(--blue)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+h1,h2,h3,h4{font-family:var(--serif);color:var(--ink);margin:0;line-height:1.15;font-weight:600}
+p{margin:0 0 1em}
+
+/* ---------- header ---------- */
+header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header::after{content:"";display:block;height:2px;background:linear-gradient(90deg,var(--green),var(--blue) 50%,var(--gold))}
+nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.mono{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-weight:600;color:#fff;font-size:1rem;
+  background:linear-gradient(135deg,var(--green),var(--blue));box-shadow:0 0 0 2px #fff,0 0 0 3.5px var(--gold)}
+.brand b{font-family:var(--serif);font-weight:600;color:var(--ink);font-size:1.1rem}
+nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+nav ul a{color:var(--ink);text-decoration:none;font-size:.9rem;font-weight:600;position:relative;padding:4px 0}
+nav ul a::after{content:"";position:absolute;left:0;right:100%;bottom:-2px;height:2px;background:var(--gold);transition:right .25s}
+nav ul a:hover::after{right:0}
+.menu-btn{display:none;background:#fff;border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:7px 12px;font:600 .9rem var(--sans)}
+@media (max-width:900px){
+  nav ul{display:none;position:absolute;top:66px;left:0;right:0;flex-direction:column;gap:0;background:#fff;border-bottom:1px solid var(--line);padding:6px 24px 12px}
+  nav ul.open{display:flex} nav ul a{display:block;padding:12px 0}
+  .menu-btn{display:block}
+}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;padding:84px 0 72px}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.55;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='97' viewBox='0 0 56 97'%3E%3Cpath d='M28 0l28 16v32L28 64 0 48V16z M28 64v33' fill='none' stroke='%231C4E9C' stroke-opacity='.07' stroke-width='1.2'/%3E%3C/svg%3E");
+  -webkit-mask-image:linear-gradient(115deg,transparent 30%,#000 75%);mask-image:linear-gradient(115deg,transparent 30%,#000 75%)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-size:.88rem;font-weight:600;color:var(--green);margin-bottom:18px}
+.kicker::before{content:"";width:28px;height:2px;background:var(--gold)}
+.hero h1{font-size:clamp(3rem,7vw,5.2rem);font-weight:600;letter-spacing:-.02em;color:var(--blue)}
+.hero h1 span{color:var(--green)}
+.post{display:inline-flex;align-items:center;gap:10px;margin:14px 0 22px;font-size:.92rem;color:var(--muted)}
+.post abbr{text-decoration:none;font-weight:700;letter-spacing:.06em;color:var(--gold);border:1.5px solid var(--gold);border-radius:6px;padding:2px 8px;cursor:help;background:var(--gold-soft)}
+.hero .intro{font-size:1.1rem;color:var(--body);max-width:54ch}
+.hero .intro strong{color:var(--ink);font-weight:600}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0 26px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:700;font-size:.93rem;text-decoration:none;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn.solid{background:linear-gradient(135deg,var(--green),var(--green-2));color:#fff;box-shadow:0 8px 20px rgba(15,110,78,.25)}
+.btn.line{color:var(--blue);border:1.5px solid var(--blue);background:#fff}
+.btn.line:hover{background:var(--blue-soft)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.chips li{font-size:.84rem;font-weight:600;padding:6px 12px;border-radius:999px;background:#fff;border:1px solid var(--line);color:var(--ink)}
+.chips li b{color:var(--gold)}
+
+.figure{position:relative;background:#fff;border-radius:22px;padding:22px 22px 16px;
+  box-shadow:0 30px 60px -20px rgba(28,78,156,.25),0 0 0 1px var(--line)}
+.figure::before{content:"";position:absolute;inset:-1px;border-radius:22px;padding:1.5px;
+  background:linear-gradient(135deg,var(--gold-2),transparent 40%,transparent 60%,var(--gold));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+.figure svg{display:block;width:100%;height:auto}
+.figure .b{fill:none;stroke:var(--blue);stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round}
+.figure .cage{stroke:var(--green);stroke-width:3.8}
+.figure .dash{stroke-dasharray:5 6}
+.figure text{font-family:var(--sans);font-weight:700;font-size:18px;fill:var(--blue)}
+.figure text.g{fill:var(--green)}
+.figure .lab{font-size:13px;font-weight:600;fill:var(--muted)}
+.figure .lab.gold{fill:var(--gold)}
+.figure .lead{stroke:var(--gold);stroke-width:1.4;fill:none;stroke-dasharray:3 4}
+.figure figcaption{font-size:.84rem;color:var(--muted);border-top:1px solid var(--line);padding-top:12px;margin-top:4px}
+.draw{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.6s ease-out forwards}
+.fadein{opacity:0;animation:fade .7s 1.3s forwards}
+.figure .dash.fadein{stroke-dasharray:5 6}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fade{to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.draw,.fadein{animation:none;stroke-dashoffset:0;opacity:1}}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr;gap:40px}.hero{padding-top:52px}.figure{max-width:460px}}
+
+/* ---------- highlights strip ---------- */
+.strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff}
+.strip .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.hl{padding:26px 22px;border-left:1px solid var(--line)}
+.hl:first-child{border-left:none;padding-left:0}
+.hl .t{font-family:var(--serif);font-size:1.18rem;color:var(--blue);font-weight:600;line-height:1.25}
+.hl .s{font-size:.85rem;color:var(--muted);margin-top:4px}
+.hl .t::before{content:"";display:block;width:22px;height:3px;background:var(--gold);margin-bottom:12px;border-radius:2px}
+@media (max-width:900px){.strip .wrap{grid-template-columns:1fr 1fr}.hl{padding:20px 16px}.hl:nth-child(3){border-left:none;padding-left:0}.hl:nth-child(n+3){border-top:1px solid var(--line)}}
+
+/* ---------- sections ---------- */
+section{padding:96px 0 40px}
+.head{margin-bottom:40px;max-width:720px}
+.head h2{font-size:clamp(2rem,3.8vw,2.8rem);color:var(--blue);display:inline-block;position:relative;padding-bottom:16px}
+.head h2::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:3px;border-radius:3px;
+  background:linear-gradient(90deg,#A47A12,var(--gold-2) 50%,var(--gold))}
+.head h2::before{content:"";position:absolute;left:0;bottom:-6px;width:40%;height:1px;background:var(--gold);opacity:.5}
+.head p{margin:22px 0 0;color:var(--muted);font-size:1.02rem}
+
+/* research */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.step{background:#fff;border-radius:18px;padding:28px 26px 22px;border:1px solid var(--line);position:relative;box-shadow:0 14px 30px -18px rgba(20,33,46,.18)}
+.step .n{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-weight:600;font-size:1.1rem;color:#fff;margin-bottom:16px}
+.step:nth-child(1) .n{background:var(--green)} .step:nth-child(2) .n{background:var(--blue)} .step:nth-child(3) .n{background:var(--gold)}
+.step h3{font-size:1.3rem;color:var(--green);margin-bottom:10px}
+.step p{font-size:.97rem;margin:0}
+.quote{margin:40px 0 0;display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;padding:28px 32px;border-radius:18px;background:linear-gradient(135deg,var(--blue-soft),#fff 60%);border:1px solid var(--line)}
+.quote .mark{font-family:var(--serif);font-size:4.5rem;line-height:.6;color:var(--gold)}
+.quote p{font-family:var(--serif);font-size:1.45rem;color:var(--blue);margin:0;line-height:1.3}
+.quote small{display:block;font-family:var(--sans);font-size:.86rem;color:var(--muted);margin-top:8px}
+@media (max-width:900px){.steps{grid-template-columns:1fr}.quote{grid-template-columns:1fr;gap:8px}}
+
+/* expertise as element tiles */
+.elements{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.el{display:grid;grid-template-columns:104px 1fr;gap:22px;align-items:start;padding:22px;border:1px solid var(--line);border-radius:18px;background:#fff}
+.tile{width:104px;height:116px;border-radius:12px;padding:8px 10px;color:#fff;display:flex;flex-direction:column;justify-content:space-between;position:relative;box-shadow:inset 0 0 0 2px rgba(255,255,255,.25)}
+.tile .z{font-size:.78rem;font-weight:700;opacity:.9}
+.tile .sym{font-family:var(--serif);font-size:2.6rem;font-weight:600;line-height:1}
+.tile .nm{font-size:.66rem;font-weight:600;letter-spacing:.02em;opacity:.95;line-height:1.2}
+.tile::after{content:"";position:absolute;left:10px;right:10px;bottom:-6px;height:3px;border-radius:2px;background:var(--gold)}
+.el:nth-child(3n+1) .tile{background:linear-gradient(160deg,var(--green-2),var(--green))}
+.el:nth-child(3n+2) .tile{background:linear-gradient(160deg,var(--blue-2),var(--blue))}
+.el:nth-child(3n+3) .tile{background:linear-gradient(160deg,#D7B04A,#A97F16)}
+.el h3{font-size:1.18rem;color:var(--blue);margin:4px 0 10px}
+.el ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px 6px}
+.el li{font-size:.84rem;padding:4px 11px;border-radius:999px;background:var(--green-soft);color:var(--green);font-weight:600}
+.el:nth-child(even) li{background:var(--blue-soft);color:var(--blue)}
+@media (max-width:900px){.elements{grid-template-columns:1fr}}
+@media (max-width:480px){.el{grid-template-columns:1fr}}
+
+/* publications */
+.pubs{display:grid;gap:18px}
+.pub{display:grid;grid-template-columns:110px 1fr;gap:26px;padding:26px 28px;border:1px solid var(--line);border-radius:18px;background:#fff;position:relative}
+.pub::before{content:"";position:absolute;left:0;top:22px;bottom:22px;width:4px;border-radius:0 4px 4px 0;background:var(--gold)}
+.pub .yr{font-family:var(--serif);font-size:2rem;font-weight:600;color:var(--gold);line-height:1}
+.pub .jr{font-size:.78rem;font-weight:700;color:var(--green);margin-top:8px}
+.pub h3{font-size:1.15rem;color:var(--blue);margin-bottom:8px;line-height:1.35}
+.pub .au{font-size:.92rem;color:var(--muted);margin:0 0 6px}
+.pub .au b{color:var(--ink)}
+.pub .src{font-size:.92rem;margin:0}
+.pub .note{font-size:.9rem;color:var(--muted);margin:8px 0 0}
+.tag{display:inline-block;font:700 .72rem var(--sans);padding:3px 9px;border-radius:999px;background:var(--gold-soft);color:#8A6A00;margin-left:8px;vertical-align:3px}
+@media (max-width:640px){.pub{grid-template-columns:1fr;gap:6px;padding:22px}}
+
+/* recognition */
+.awards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:56px}
+.award{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px 22px;text-align:left;position:relative;overflow:hidden}
+.award::after{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold-2))}
+.medal{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;margin-bottom:14px;background:var(--gold-soft);box-shadow:inset 0 0 0 2px var(--gold)}
+.medal svg{width:22px;height:22px;stroke:var(--gold);fill:none;stroke-width:2}
+.award .when{font-size:.8rem;font-weight:700;color:var(--gold)}
+.award h3{font-size:1.12rem;color:var(--blue);margin:4px 0 8px}
+.award p{font-size:.9rem;color:var(--muted);margin:0}
+@media (max-width:1000px){.awards{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.awards{grid-template-columns:1fr}}
+.subhead{font-size:1.35rem;color:var(--green);margin-bottom:6px}
+.subnote{font-size:.92rem;color:var(--muted);margin-bottom:18px}
+.certs{border-top:2px solid var(--gold)}
+.cert{display:grid;grid-template-columns:140px 1fr;gap:24px;padding:18px 4px;border-bottom:1px solid var(--line)}
+.cert .d{font-weight:700;color:var(--gold);font-size:.9rem}
+.cert h4{font-size:1.06rem;color:var(--green);margin-bottom:3px}
+.cert .by{color:var(--blue);font-weight:600;font-size:.9rem;margin:0 0 3px}
+.cert p{margin:0;font-size:.9rem;color:var(--muted)}
+@media (max-width:640px){.cert{grid-template-columns:1fr;gap:4px}}
+
+/* journey */
+.journey{position:relative;display:grid;gap:22px}
+.journey::before{content:"";position:absolute;left:19px;top:10px;bottom:10px;width:2px;background:linear-gradient(var(--gold),var(--green) 50%,var(--blue))}
+.stop{position:relative;padding-left:60px}
+.stop .dot{position:absolute;left:8px;top:22px;width:24px;height:24px;border-radius:50%;background:#fff;border:3px solid var(--green);box-shadow:0 0 0 4px #fff}
+.stop:nth-child(even) .dot{border-color:var(--blue)}
+.card{border:1px solid var(--line);border-radius:18px;padding:22px 26px;background:#fff}
+.card .when{display:inline-block;font-size:.8rem;font-weight:700;color:#8A6A00;background:var(--gold-soft);padding:3px 10px;border-radius:999px}
+.card h3{font-size:1.25rem;color:var(--blue);margin:10px 0 2px}
+.card .org{color:var(--green);font-weight:600;font-size:.95rem;margin-bottom:8px}
+.card .thesis{font-size:.92rem;color:var(--muted);font-style:italic;margin:0 0 8px}
+.card ul{margin:0;padding-left:18px;font-size:.95rem}
+.card li{margin-bottom:4px}
+.card li::marker{color:var(--gold)}
+
+/* engagement */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.panel{border:1px solid var(--line);border-radius:18px;padding:26px 28px;background:#fff}
+.panel h3{font-size:1.3rem;color:var(--green);margin-bottom:10px;padding-bottom:10px;border-bottom:2px solid var(--gold)}
+.panel ul{list-style:none;margin:0;padding:0}
+.panel li{padding:12px 0;border-bottom:1px solid var(--line);font-size:.94rem}
+.panel li:last-child{border-bottom:none}
+.panel li b{display:block;color:var(--blue);font-weight:700}
+.panel li span{color:var(--muted)}
+.partners{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.partners i{font-style:normal;font-size:.78rem;font-weight:700;padding:3px 9px;border-radius:6px;background:var(--blue-soft);color:var(--blue)}
+@media (max-width:900px){.two{grid-template-columns:1fr}}
+
+/* contact */
+.contact{padding:96px 0 80px}
+.cbox{position:relative;border-radius:26px;padding:56px clamp(24px,6vw,72px);background:#fff;text-align:center;
+  box-shadow:0 30px 60px -30px rgba(28,78,156,.3)}
+.cbox::before{content:"";position:absolute;inset:0;border-radius:26px;padding:2px;background:linear-gradient(135deg,var(--green),var(--gold) 50%,var(--blue));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+.cbox h2{font-size:clamp(2rem,4vw,3rem);color:var(--blue)}
+.cbox h2 em{font-style:italic;color:var(--green)}
+.cbox p{max-width:58ch;margin:16px auto 30px;color:var(--muted)}
+.cbox .actions{justify-content:center;margin:0}
+.cline{margin-top:26px;font-size:.92rem;color:var(--muted)}
+.cline a{color:var(--green);font-weight:700;text-decoration:none}
+footer{border-top:1px solid var(--line);padding:26px 0 36px;font-size:.85rem;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+footer a{color:var(--blue);font-weight:700;text-decoration:none}
+
+/* ===== Refined scale ===== */
+body{font-size:15.5px;line-height:1.7;font-weight:400;letter-spacing:.005em}
+h1,h2,h3,h4{font-weight:600;letter-spacing:.005em}
+.wrap{max-width:1080px}
+nav{height:58px} .mono{width:32px;height:32px;font-size:.9rem} .brand b{font-size:1.05rem;font-weight:600;letter-spacing:.02em}
+nav ul{gap:24px} nav ul a{font-size:.8rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase}
+.hero{padding:64px 0 56px}
+.kicker{font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin-bottom:14px}
+.hero h1{font-size:clamp(2.4rem,4.6vw,3.5rem);font-weight:600;letter-spacing:0;line-height:1.05}
+.post{font-size:.82rem;margin:12px 0 20px}
+.post abbr{font-size:.72rem;padding:1px 7px;border-width:1px}
+.hero .intro{font-size:.98rem;max-width:52ch}
+.btn{padding:9px 18px;font-size:.8rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;border-radius:4px}
+.btn.solid{box-shadow:none}
+.btn.line{border-width:1px}
+.chips li{font-size:.76rem;font-weight:500;padding:4px 10px}
+.figure{padding:18px 18px 12px;border-radius:14px;box-shadow:0 20px 40px -24px rgba(28,78,156,.22),0 0 0 1px var(--line)}
+.figure::before{border-radius:14px;padding:1px}
+.figure figcaption{font-size:.78rem}
+.hl{padding:22px 20px} .hl .t{font-size:1.05rem} .hl .s{font-size:.78rem} .hl .t::before{width:18px;height:2px;margin-bottom:10px}
+section{padding:80px 0 24px}
+.head{margin-bottom:32px}
+.head h2{font-size:clamp(1.6rem,2.6vw,2.05rem);padding-bottom:10px;font-weight:600}
+.head h2::after{height:1.5px}
+.head h2::before{display:none}
+.head p{font-size:.92rem;margin-top:16px}
+.step{padding:24px 22px 18px;border-radius:10px;box-shadow:none}
+.step .n{width:30px;height:30px;font-size:.95rem;margin-bottom:12px}
+.step h3{font-size:1.12rem} .step p{font-size:.9rem}
+.quote{padding:22px 26px;border-radius:10px}
+.quote .mark{font-size:3.2rem} .quote p{font-size:1.2rem;font-style:italic}
+.quote small{font-style:normal;font-size:.78rem}
+.el{grid-template-columns:72px 1fr;gap:18px;padding:18px;border-radius:10px}
+.tile{width:72px;height:82px;border-radius:6px;padding:6px 7px}
+.tile .z{font-size:.62rem} .tile .sym{font-size:1.85rem} .tile .nm{font-size:.52rem}
+.tile::after{height:2px;bottom:-5px}
+.el h3{font-size:1.05rem;margin:2px 0 8px}
+.el li{font-size:.74rem;font-weight:500;padding:2px 9px}
+.pub{grid-template-columns:90px 1fr;gap:20px;padding:20px 22px;border-radius:10px}
+.pub::before{width:2px;top:18px;bottom:18px}
+.pub .yr{font-size:1.5rem} .pub .jr{font-size:.68rem;letter-spacing:.04em}
+.pub h3{font-size:1rem;line-height:1.4} .pub .au,.pub .src{font-size:.84rem} .pub .note{font-size:.82rem}
+.tag{font-size:.64rem}
+.award{padding:20px 18px;border-radius:10px} .award::after{height:2px}
+.medal{width:36px;height:36px;margin-bottom:10px} .medal svg{width:17px;height:17px}
+.award .when{font-size:.7rem;letter-spacing:.04em} .award h3{font-size:1rem} .award p{font-size:.82rem}
+.subhead{font-size:1.15rem} .subnote{font-size:.82rem}
+.certs{border-top-width:1.5px}
+.cert{grid-template-columns:120px 1fr;gap:20px;padding:14px 4px}
+.cert .d{font-size:.78rem} .cert h4{font-size:.98rem} .cert .by,.cert p{font-size:.82rem}
+.stop{padding-left:52px} .stop .dot{width:18px;height:18px;left:11px;border-width:2px}
+.card{padding:18px 22px;border-radius:10px}
+.card .when{font-size:.7rem;letter-spacing:.04em}
+.card h3{font-size:1.1rem} .card .org{font-size:.85rem} .card .thesis{font-size:.82rem} .card ul{font-size:.86rem}
+.panel{padding:22px 24px;border-radius:10px}
+.panel h3{font-size:1.1rem;border-bottom-width:1.5px}
+.panel li{font-size:.86rem;padding:10px 0}
+.partners i{font-size:.68rem;font-weight:600}
+.contact{padding:80px 0 64px}
+.cbox{padding:44px clamp(22px,5vw,56px);border-radius:14px}
+.cbox::before{border-radius:14px;padding:1.5px}
+.cbox h2{font-size:clamp(1.7rem,3vw,2.3rem)}
+.cbox p{font-size:.92rem}
+.cline{font-size:.84rem}
+footer{font-size:.78rem}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap" aria-label="Main">
+    <a class="brand" href="#top"><span class="mono" aria-hidden="true">DB</span><b>Dolapo Bello</b></a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
+    <ul id="menu">
+      <li><a href="#research">Research</a></li>
+      <li><a href="#expertise">Expertise</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#recognition">Recognition</a></li>
+      <li><a href="#journey">Journey</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <div class="kicker">Synthetic organic and medicinal chemist</div>
+      <h1>Dolapo <span>Bello</span></h1>
+      <div class="post"><abbr title="Associate Member of the Royal Society of Chemistry">AMRSC</abbr> Associate Member of the Royal Society of Chemistry</div>
+      <p class="intro">I design and make <strong>three dimensional versions of quinolone antibiotics</strong>. By swapping part of the drug for a small, strained carbon cage called bicyclo[1.1.1]pentane, my work looks for new molecules that could stay effective as bacteria grow resistant to the medicines we rely on.</p>
+      <p class="intro">Fully funded PhD researcher at <strong>Loughborough University</strong>, published in <em>The Journal of Organic Chemistry</em>, and an award winning communicator of science.</p>
+      <div class="actions">
+        <a class="btn solid" href="mailto:dolapobello2013@gmail.com">Email Dolapo</a>
+        <a class="btn line" href="Dolapo_Bello_CV.pdf" download>Download CV</a>
+        <a class="btn line" href="https://www.linkedin.com/in/dolapo-bello" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <ul class="chips">
+        <li><b>●</b> Loughborough, UK</li>
+        <li><b>●</b> PhD Organic Chemistry, 2024 to present</li>
+        <li><b>●</b> RSC Broadening Horizons 2026</li>
+      </ul>
+    </div>
+
+    <figure class="figure" style="margin:0">
+      <svg viewBox="150 100 340 340" role="img" aria-labelledby="molT">
+        <title id="molT">A quinolone antibiotic core carrying a bicyclo[1.1.1]pentane cage on its ring nitrogen</title>
+        <path class="b cage draw" pathLength="1" d="M330 250 L296 214 L330 178"/>
+        <path class="b cage draw" pathLength="1" d="M330 250 L366 222 L330 178"/>
+        <path class="b cage dash fadein" d="M330 250 L344 208 L330 178"/>
+        <path class="b draw" pathLength="1" d="M330 178 L330 146"/>
+        <text class="g fadein" x="322" y="138">R</text>
+        <path class="b draw" pathLength="1" d="M330 290 L330 250"/>
+        <path class="b draw" pathLength="1" d="M330 290 L364.6 310 L364.6 350 L330 370 L295.4 350 L295.4 310 Z"/>
+        <path class="b draw" pathLength="1" d="M357 318 L357 342"/>
+        <path class="b draw" pathLength="1" d="M326 370 L326 402 M334 370 L334 402"/>
+        <text class="fadein" x="323" y="424">O</text>
+        <path class="b draw" pathLength="1" d="M364.6 350 L399 370"/>
+        <text class="fadein" x="403" y="378">CO₂H</text>
+        <path class="b draw" pathLength="1" d="M295.4 310 L260.8 290 L226.2 310 L226.2 350 L260.8 370 L295.4 350"/>
+        <path class="b draw" pathLength="1" d="M233.5 314 L233.5 346 M263 299 L287 313 M263 361 L287 347"/>
+        <circle cx="330" cy="290" r="12" fill="#fff" class="fadein"/>
+        <text class="fadein" x="323" y="297">N</text>
+        <!-- annotations -->
+        <path class="lead fadein" d="M372 214 L420 190"/>
+        <text class="lab gold fadein" x="384" y="176">BCP cage</text>
+        <text class="lab fadein" x="384" y="160">3D bioisostere</text>
+        <path class="lead fadein" d="M222 330 L182 300"/>
+        <text class="lab gold fadein" x="160" y="284">Quinolone core</text>
+        <text class="lab fadein" x="160" y="268">antibiotic scaffold</text>
+      </svg>
+      <figcaption>The idea in one drawing: a quinolone core (blue) with a bicyclo[1.1.1]pentane cage (green) on the ring nitrogen, the kind of three dimensional analogue Dolapo builds in the lab.</figcaption>
+    </figure>
+  </div>
+</div>
+
+<div class="strip">
+  <div class="wrap">
+    <div class="hl"><div class="t">Published in J. Org. Chem.</div><div class="s">2025, new routes to BCP heterocyclic salts</div></div>
+    <div class="hl"><div class="t">3MT® Winner and People's Choice</div><div class="s">Loughborough University, 2026</div></div>
+    <div class="hl"><div class="t">RSC Advances 5MT Runner Up</div><div class="s">Women in Chemistry, Bristol 2026</div></div>
+    <div class="hl"><div class="t">AMRSC</div><div class="s">Royal Society of Chemistry, June 2026</div></div>
+  </div>
+</div>
+
+<section id="research">
+  <div class="wrap">
+    <div class="head">
+      <h2>The research</h2>
+      <p>PhD thesis: <em>Bicyclo[1.1.1]pentane Analogues of Quinolone Antibiotics</em>, supervised by Dr Marc Kimber at Loughborough University.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3>The problem</h3><p>Quinolones are among the most widely used antibiotic classes, but resistance to them keeps rising. Antimicrobial resistance is one of the biggest threats in modern medicine, and new chemical starting points are needed.</p></div>
+      <div class="step"><div class="n">2</div><h3>The idea</h3><p>Many drugs are built from flat aromatic rings. Bicyclo[1.1.1]pentane (BCP) is a compact, rigid cage that can stand in for those flat pieces as a bioisostere, adding three dimensional shape that can change how a molecule behaves in the body.</p></div>
+      <div class="step"><div class="n">3</div><h3>The chemistry</h3><p>Strained cages are hard to attach. Dolapo develops multistep routes to N-BCP quinolin-4(1H)-ones through masked quinolinium intermediates, and extends them to fluorinated and 3-aryl substituted analogues for structure activity studies.</p></div>
+    </div>
+    <div class="quote"><div class="mark" aria-hidden="true">“</div><p>Designing smarter antibiotics for the future.<small>The talk that won Loughborough's School of Science Three Minute Thesis and People's Choice awards in 2026.</small></p></div>
+  </div>
+</section>
+
+<section id="expertise">
+  <div class="wrap">
+    <div class="head">
+      <h2>Expertise</h2>
+      <p>Hands on synthetic chemistry backed by full structural characterisation, built across three research degrees in the UK and Nigeria.</p>
+    </div>
+    <div class="elements">
+      <div class="el"><div class="tile"><span class="z">1</span><span class="sym">Sy</span><span class="nm">Synthesis</span></div>
+        <div><h3>Synthetic organic chemistry</h3><ul><li>Multistep synthesis</li><li>Retrosynthesis</li><li>Reaction optimisation</li><li>C–C and C–N bond formation</li><li>Cross coupling</li><li>Strained ring and BCP chemistry</li><li>Substrate scope studies</li></ul></div></div>
+      <div class="el"><div class="tile"><span class="z">2</span><span class="sym">Mc</span><span class="nm">Medicinal chemistry</span></div>
+        <div><h3>Medicinal chemistry</h3><ul><li>Bioisosteric replacement</li><li>Molecular design</li><li>SAR and SPR analysis</li><li>Antibiotic drug discovery</li></ul></div></div>
+      <div class="el"><div class="tile"><span class="z">3</span><span class="sym">An</span><span class="nm">Analytical</span></div>
+        <div><h3>Characterisation</h3><ul><li>1D and 2D NMR</li><li>HRMS and MS</li><li>IR</li><li>HPLC</li><li>GC</li><li>UV–Vis</li><li>XRD</li><li>SEM and TEM</li><li>ICP and AAS</li></ul></div></div>
+      <div class="el"><div class="tile"><span class="z">4</span><span class="sym">Lb</span><span class="nm">Laboratory</span></div>
+        <div><h3>Laboratory practice</h3><ul><li>Schlenk line</li><li>Glovebox</li><li>Air and moisture sensitive reactions</li><li>Flash chromatography</li><li>Purification</li></ul></div></div>
+      <div class="el"><div class="tile"><span class="z">5</span><span class="sym">Sw</span><span class="nm">Software</span></div>
+        <div><h3>Software</h3><ul><li>ChemDraw</li><li>Chem3D</li><li>MestReNova</li><li>TopSpin</li><li>Mercury (CCDC)</li><li>OPUS and OMNIC</li><li>EndNote</li><li>Mendeley</li></ul></div></div>
+      <div class="el"><div class="tile"><span class="z">6</span><span class="sym">Cm</span><span class="nm">Communication</span></div>
+        <div><h3>Communication</h3><ul><li>Conference talks</li><li>Posters</li><li>Public engagement</li><li>Teaching and mentoring</li><li>Scientific writing</li></ul></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="wrap">
+    <div class="head">
+      <h2>Publications</h2>
+      <p>Peer reviewed work in organic synthesis and environmental materials chemistry.</p>
+    </div>
+    <div class="pubs">
+      <article class="pub">
+        <div><div class="yr">2025</div><div class="jr">J. Org. Chem.</div></div>
+        <div>
+          <h3>Nucleophilic Substitution of 1,3-Diiodobicyclo[1.1.1]pentane: Synthesis of Bicyclo[1.1.1]pentylpyridinium, Quinolinium, Isoquinolinium, and Pyrazolium Salts</h3>
+          <p class="au">H. J. C. Monroe, <b>D. J. Bello</b>, B. J. Duff, M. R. J. Elsegood, K. Watanabe, G. J. Pritchard, M. C. Kimber</p>
+          <p class="src"><i>The Journal of Organic Chemistry</i> 2025, 90 (23), 7712–7722. <a href="https://doi.org/10.1021/acs.joc.5c00565" target="_blank" rel="noopener">doi:10.1021/acs.joc.5c00565</a></p>
+        </div>
+      </article>
+      <article class="pub">
+        <div><div class="yr">2021</div><div class="jr">Environ. Nanotechnol.</div></div>
+        <div>
+          <h3>Synthesis of oxidised starch (<i>Dioscorea dumetorum</i>) nanoparticles for the adsorption of lead(II) and cadmium(II) ions from wastewater</h3>
+          <p class="au">K. N. Awokoya, V. O. Oninla, <b>D. J. Bello</b></p>
+          <p class="src"><i>Environmental Nanotechnology, Monitoring &amp; Management</i> 2021, 14, 100440. <a href="https://doi.org/10.1016/j.enmm.2021.100440" target="_blank" rel="noopener">doi:10.1016/j.enmm.2021.100440</a></p>
+          <p class="note">Starch isolated from bitter yam was modified into nanoparticles and tested as a low cost scavenger for toxic heavy metals in water.</p>
+        </div>
+      </article>
+      <article class="pub">
+        <div><div class="yr">Next</div><div class="jr">Manuscript</div></div>
+        <div>
+          <h3>N-Bicyclo[1.1.1]pentylation of quinolin-4(1H)-ones via masked quinolinium intermediates: access to fluorinated and 3-aryl substituted analogues <span class="tag">In preparation</span></h3>
+          <p class="au"><b>D. J. Bello</b> and colleagues</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="recognition">
+  <div class="wrap">
+    <div class="head">
+      <h2>Recognition</h2>
+      <p>Prizes for explaining complex chemistry clearly, and professional recognition from the Royal Society of Chemistry.</p>
+    </div>
+    <div class="awards">
+      <div class="award"><div class="medal"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg></div><div class="when">2026, Loughborough</div><h3>Three Minute Thesis Winner</h3><p>Best presentation, School of Science 3MT® competition.</p></div>
+      <div class="award"><div class="medal"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg></div><div class="when">2026, Loughborough</div><h3>People's Choice Award</h3><p>Audience vote in the same 3MT® competition.</p></div>
+      <div class="award"><div class="medal"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg></div><div class="when">29 May 2026, Bristol</div><h3>RSC Advances 5MT Runner Up</h3><p>Celebrating Women in Chemistry Conference, University of Bristol.</p></div>
+      <div class="award"><div class="medal"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V7z"/></svg></div><div class="when">30 June 2026</div><h3>Associate Member, RSC</h3><p>Entitled to use the designatory letters AMRSC.</p></div>
+    </div>
+
+    <h3 class="subhead">Certificates</h3>
+    <p class="subnote">Full details of each certificate held.</p>
+    <div class="certs">
+      <div class="cert"><div class="d">2026</div><div><h4>Winner, School of Science Three Minute Thesis (3MT®) Competition</h4><p class="by">Loughborough University, School of Science</p><p>Signed by Professor Oli Buckley, Director of Doctoral Programmes</p></div></div>
+      <div class="cert"><div class="d">2026</div><div><h4>People's Choice, School of Science Three Minute Thesis (3MT®) Competition</h4><p class="by">Loughborough University, School of Science</p><p>Signed by Professor Oli Buckley, Director of Doctoral Programmes</p></div></div>
+      <div class="cert"><div class="d">29 May 2026</div><div><h4>RSC Advances 5MT Runner Up</h4><p class="by">Royal Society of Chemistry, RSC Advances</p><p>Awarded at the Women in Chemistry Conference 2026, University of Bristol. Signed by Dr Laura Fisher (Executive Editor), Professor Russell Cox and Professor Karen Faulds (Co-Editors-in-Chief)</p></div></div>
+      <div class="cert"><div class="d">29 May 2026</div><div><h4>Five Minute Thesis (5MT) Runner Up Prize</h4><p class="by">WiChem Bristol 2026 and University of Bristol</p><p>Celebrating Women in Chemistry Conference 2026. Judged on behalf of the organising committee by Prof. M. Carmen Galan, Dr Beatrice Collins and Dr Mélanie Roffet-Salque</p></div></div>
+      <div class="cert"><div class="d">30 June 2026</div><div><h4>Associate Member (AMRSC)</h4><p class="by">The Royal Society of Chemistry</p><p>Admitted as an Associate Member and entitled to use the designatory letters AMRSC</p></div></div>
+      <div class="cert"><div class="d">29 May 2026</div><div><h4>Certificate of Participation</h4><p class="by">University of Bristol and WiChem Bristol 2026</p><p>For attending and presenting a 5MT at the Celebrating Women in Chemistry Conference</p></div></div>
+      <div class="cert"><div class="d">18 May 2026</div><div><h4>Certificate of Attendance</h4><p class="by">RSC Heterocyclic and Synthesis Group, organised by Networks Meetings</p><p>Heterocyclic &amp; Synthesis Group 3rd Postdoctoral Symposium (virtual)</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="journey">
+  <div class="wrap">
+    <div class="head">
+      <h2>Research journey</h2>
+      <p>From materials and environmental chemistry in Nigeria to medicinal chemistry in the UK.</p>
+    </div>
+    <div class="journey">
+      <div class="stop"><span class="dot"></span><div class="card">
+        <span class="when">2024 to present</span>
+        <h3>PhD Chemistry (Organic Chemistry)</h3>
+        <div class="org">Loughborough University, UK · Fully funded studentship</div>
+        <p class="thesis">Thesis: Bicyclo[1.1.1]pentane Analogues of Quinolone Antibiotics. Supervisor: Dr Marc Kimber</p>
+        <ul>
+          <li>Design and synthesise BCP containing quinolone analogues as three dimensional bioisosteres for antibiotic discovery.</li>
+          <li>Develop and optimise multistep routes through quinoline and quinolinium systems and functionalised BCP scaffolds.</li>
+          <li>Study reaction conditions, scope and mechanism to improve efficiency and selectivity.</li>
+          <li>Characterise new compounds by 1D/2D NMR, HRMS, IR, HPLC and GC, working under inert atmosphere with Schlenk and glovebox techniques.</li>
+          <li>Demonstrate in undergraduate organic chemistry labs and support MSc research students.</li>
+        </ul>
+      </div></div>
+      <div class="stop"><span class="dot"></span><div class="card">
+        <span class="when">2023 to 2024</span>
+        <h3>MSc Chemistry</h3>
+        <div class="org">Nottingham Trent University, UK</div>
+        <p class="thesis">Thesis: Microfluidic Mixing Analysis of Liquid Systems. Supervisor: Dr Cheu Wing Li</p>
+        <ul>
+          <li>Designed and analysed microfluidic T junction systems to study mixing, diffusion and flow.</li>
+          <li>Used quantitative analysis and experimental optimisation to evaluate mixing performance.</li>
+        </ul>
+      </div></div>
+      <div class="stop"><span class="dot"></span><div class="card">
+        <span class="when">2018 to 2020</span>
+        <h3>MSc Industrial Chemistry</h3>
+        <div class="org">Obafemi Awolowo University, Nigeria</div>
+        <p class="thesis">Thesis: Biopolymer Nanoparticles for Environmental Remediation</p>
+        <ul>
+          <li>Synthesised and characterised starch based nanoparticles for removing Pb(II) and Cd(II) from water, published in 2021.</li>
+          <li>Modelled adsorption with kinetic, thermodynamic and isotherm models.</li>
+        </ul>
+      </div></div>
+      <div class="stop"><span class="dot"></span><div class="card">
+        <span class="when">2009 to 2015</span>
+        <h3>BSc Industrial Chemistry</h3>
+        <div class="org">Obafemi Awolowo University, Nigeria</div>
+        <ul>
+          <li>Geochemical and materials characterisation of Nigerian and Canadian tar sands using AAS, ICP-MS, FTIR, SEM and XRD.</li>
+        </ul>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section id="engagement">
+  <div class="wrap">
+    <div class="head">
+      <h2>Beyond the bench</h2>
+      <p>Industry exposure, conferences and a long record of encouraging others into science.</p>
+    </div>
+    <div class="two">
+      <div class="panel">
+        <h3>Industry and conferences</h3>
+        <ul>
+          <li><b>RSC Broadening Horizons, 5th cohort (2026)</b><span>Year long programme with industry partners, including a site visit to Unilever at Port Sunlight.</span>
+            <div class="partners"><i>GSK</i><i>AstraZeneca</i><i>Unilever</i><i>Johnson Matthey</i><i>Syngenta</i><i>AM Technology</i><i>Nanomerics</i></div></li>
+          <li><b>Oral presentation, Science Matters Conference</b><span>Loughborough University, June 2026</span></li>
+          <li><b>Five Minute Thesis talk, Celebrating Women in Chemistry</b><span>University of Bristol, May 2026</span></li>
+          <li><b>Delegate, RSC Heterocyclic &amp; Synthesis Group 3rd Postdoctoral Symposium</b><span>Virtual, May 2026</span></li>
+          <li><b>Poster presentations, RSC organic chemistry meetings</b><span>2024 to 2026, including the University of Sheffield, April 2026</span></li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>Teaching, outreach and memberships</h3>
+        <ul>
+          <li><b>Laboratory demonstrator and mentor</b><span>Undergraduate organic chemistry labs; supervision of MSc research students.</span></li>
+          <li><b>Women in Science, Nigeria</b><span>Helps organise the annual February event celebrating women scientists and inspiring girls into science.</span></li>
+          <li><b>Peer Educator, UNICEF Nigeria</b><span>Health awareness sessions for secondary school students.</span></li>
+          <li><b>Royal Society of Chemistry</b><span>Associate Member (AMRSC) since 2026</span></li>
+          <li><b>Black Women in Science, UK</b><span>Member since 2024</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="cbox">
+      <h2>Let's talk <em>chemistry</em></h2>
+      <p>I would love to hear from teams in pharmaceutical, agrochemical and chemical industry R&amp;D, and from research groups working on drug discovery and new synthetic methods.</p>
+      <div class="actions">
+        <a class="btn solid" href="mailto:dolapobello2013@gmail.com">Email Dolapo</a>
+        <a class="btn line" href="https://www.linkedin.com/in/dolapo-bello" target="_blank" rel="noopener">Connect on LinkedIn</a>
+        <a class="btn line" href="Dolapo_Bello_CV.pdf" download>Download CV</a>
+      </div>
+      <div class="cline"><a href="mailto:dolapobello2013@gmail.com">dolapobello2013@gmail.com</a></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Dolapo Jolade Bello AMRSC · Loughborough, UK</span>
+    <a href="#top">Back to top</a>
+  </div>
+</footer>
+
+<script>
+const btn=document.querySelector('.menu-btn'),menu=document.getElementById('menu');
+btn.addEventListener('click',()=>{const o=menu.classList.toggle('open');btn.setAttribute('aria-expanded',o)});
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');btn.setAttribute('aria-expanded',false)}));
+</script>
+</body>
+</html>
